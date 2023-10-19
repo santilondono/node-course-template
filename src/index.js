@@ -2,12 +2,15 @@ import Express from "express";
 
 //Import Routes
 import { usersRouter } from "./routes/usersRoutes.js";
+import { productsRouter } from "./routes/productsRouter.js";
 
 const app = Express();
 const port = 3000;
 
 //App Routes
 app.use('/api/users',usersRouter)
+
+app.use('/api/products', productsRouter)
 
 app.use('/', (req, res) => {
 	res.send('Hello World!');
